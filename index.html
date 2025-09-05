@@ -3,49 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Under Maintenance</title>
+  <title>Site Under Maintenance</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      overflow: hidden;
       text-align: center;
     }
+
     h1 {
       font-size: 3em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s ease-in-out;
     }
+
     p {
       font-size: 1.2em;
       max-width: 600px;
       margin-bottom: 2em;
+      animation: fadeIn 3s ease-in-out;
     }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #fff;
+      border-top: 6px solid #00c6ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 2em;
+    }
+
     .contact {
       font-size: 1em;
       background: rgba(255, 255, 255, 0.1);
       padding: 1em 2em;
       border-radius: 8px;
+      animation: fadeIn 4s ease-in-out;
     }
+
     .logo {
       font-size: 1.5em;
       font-weight: bold;
       margin-bottom: 1em;
       letter-spacing: 1px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="logo">PRABIN MAINALI</div>
-  <h1>🚧 We're Working on Something Great</h1>
-  <p>Our website is currently undergoing scheduled maintenance to bring you a better experience. We’ll be back online shortly. Thank you for your patience!</p>
+  <div class="loader"></div>
+  <h1>🚧 Site Under Maintenance</h1>
+  <p>We're currently upgrading our website to serve you better. Please check back soon. Your patience means the world to us!</p>
   <div class="contact">
-    📧 Contact: <a href="mailto:prabinhero87@gmail.com" style="color: #fff; text-decoration: underline;">prabinhero87@gmail.com</a>
+    📧 Reach out: <a href="mailto:prabinhero87@gmail.com" style="color: #fff; text-decoration: underline;">prabinhero87@gmail.com</a>
   </div>
 </body>
 </html>
