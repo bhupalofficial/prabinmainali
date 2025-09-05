@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Under Maintenance</title>
+  <title>Website Under Maintenance</title>
   <style>
     body {
       margin: 0;
@@ -17,58 +17,35 @@
       height: 100vh;
       text-align: center;
     }
-
     h1 {
       font-size: 3em;
       margin-bottom: 0.2em;
     }
-
     p {
       font-size: 1.2em;
-      margin: 0.5em 0;
+      max-width: 600px;
+      margin-bottom: 2em;
     }
-
     .contact {
-      margin-top: 2em;
       font-size: 1em;
       background: rgba(255, 255, 255, 0.1);
       padding: 1em 2em;
       border-radius: 8px;
     }
-
-    .blinker {
-      animation: blink 1.5s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
-  <h1 class="blinker">🚧 Under Maintenance 🚧</h1>
-  <p>We're currently working on something awesome.</p>
-  <p>Please check back soon!</p>
-
+  <div class="logo">PRABIN MAINALI</div>
+  <h1>🚧 We're Working on Something Great</h1>
+  <p>Our website is currently undergoing scheduled maintenance to bring you a better experience. We’ll be back online shortly. Thank you for your patience!</p>
   <div class="contact">
-    <strong>PRABIN MAINALI</strong><br />
-    📧 Contact: <a href="mailto:prabinhero87@gmail.com" style="color: #ffd;">prabinhero87@gmail.com</a>
+    📧 Contact: <a href="mailto:prabinhero87@gmail.com" style="color: #fff; text-decoration: underline;">prabinhero87@gmail.com</a>
   </div>
-
-  <script>
-    // Optional: Add a countdown or dynamic message
-    const messages = [
-      "Upgrading servers...",
-      "Polishing the pixels...",
-      "Tuning performance...",
-      "Almost there..."
-    ];
-    let i = 0;
-    setInterval(() => {
-      document.querySelector("p:nth-of-type(2)").textContent = messages[i % messages.length];
-      i++;
-    }, 3000);
-  </script>
 </body>
 </html>
