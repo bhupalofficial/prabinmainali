@@ -28,7 +28,7 @@
     p {
       font-size: 1.2em;
       max-width: 600px;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       animation: fadeIn 3s ease-in-out;
     }
 
@@ -58,6 +58,12 @@
       animation: fadeIn 1.5s ease-in-out;
     }
 
+    .countdown {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+      animation: fadeIn 3.5s ease-in-out;
+    }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -76,15 +82,10 @@
     }
 
     @keyframes floatIcon {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
-      }
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
     }
 
-    /* Random positions for icons */
     .icon:nth-child(1) { left: 10%; animation-delay: 0s; }
     .icon:nth-child(2) { left: 30%; animation-delay: 2s; }
     .icon:nth-child(3) { left: 50%; animation-delay: 4s; }
@@ -97,6 +98,7 @@
   <div class="loader"></div>
   <h1>🚧 Site Under Maintenance</h1>
   <p>We're currently upgrading our website to serve you better. Please check back soon. Your patience means the world to us!</p>
+  <div class="countdown" id="countdown">Loading countdown...</div>
   <div class="contact">
     📧 Reach out: <a href="mailto:prabinhero87@gmail.com" style="color: #fff; text-decoration: underline;">prabinhero87@gmail.com</a>
   </div>
@@ -107,5 +109,29 @@
   <div class="icon">🔧</div>
   <div class="icon">☁️</div>
   <div class="icon">🛠️</div>
+
+  <script>
+    const countdownElement = document.getElementById("countdown");
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 10); // 10 days from now
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "✅ We're back online!";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
